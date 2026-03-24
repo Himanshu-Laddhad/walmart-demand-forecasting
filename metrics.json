@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "Seasonal Naive (Legacy)": {
+      "wape": 0.108379,
+      "rmse": 3622.823042,
+      "mae": 1747.193757
+    },
+    "LightGBM GBM": {
+      "wape": 0.082678,
+      "rmse": 2769.485628,
+      "mae": 1332.859183
+    }
+  },
+  "business_impact": {
+    "baseline_wape_pct": 10.84,
+    "gbm_wape_pct": 8.27,
+    "improvement_pp": 2.57,
+    "relative_improvement_pct": 23.71,
+    "est_wc_release_usd": 785176026.0,
+    "est_stockout_reduction_pct": 0.386
+  }
+}
