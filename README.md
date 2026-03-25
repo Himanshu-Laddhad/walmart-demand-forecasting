@@ -132,8 +132,7 @@ jupyter notebook walmart_forecasting_case_study.ipynb
 
 Full analysis with methodology, results, and practitioner lessons:
 
-- **Medium:** *(link)*
-- **PDF report:** [`walmart_demand_forecasting_case_study.pdf`](walmart_demand_forecasting_case_study.pdf)
+**Medium:** *(link)*
 
 ---
 
