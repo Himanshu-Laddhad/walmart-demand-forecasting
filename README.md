@@ -86,12 +86,12 @@ walmart_forecasting_case_study/
 ├── walmart_demand_forecasting_case_study.pdf  # Case study report (PDF)
 ├── medium_post.md                         # Full Medium write-up
 │
-├── data/                                  # Raw Kaggle dataset (or synthetic proxy)
-├── figures/                               # All output charts (PNG)
-└── outputs/
-    ├── metrics.json                       # Model evaluation metrics
-    ├── predictions.csv                    # Test-set predictions
-    └── feature_importance.csv             # LightGBM feature importances
+├── metrics.json                       # Model evaluation metrics                              
+├── predictions.csv                    # Test-set predictions
+├── feature_importance.csv             # LightGBM feature importances
+├── data (csv)                         #train, test, stores 
+└── figures (png)                      #graphs
+ 
 ```
 
 ---
