@@ -70,9 +70,9 @@ $$\text{WAPE} = \frac{\sum |\text{actual} - \text{predicted}|}{\sum \text{actual
 
 | | |
 |---|---|
-| ![Forecast comparison](figures/forecast_comparison.png) | ![Feature importance](figures/feature_importance.png) |
+| ![Forecast comparison](forecast_comparison.png) | ![Feature importance](feature_importance.png) |
 | *Forecast comparison: Actual vs. Seasonal Naive vs. GBM* | *Top 20 LightGBM feature importances by split count* |
-| ![WAPE by store type](figures/wape_by_store_type.png) | ![Holiday vs. regular](figures/holiday_vs_regular.png) |
+| ![WAPE by store type](wape_by_store_type.png) | ![Holiday vs. regular](holiday_vs_regular.png) |
 | *WAPE improvement by store type* | *Holiday vs. non-holiday week performance* |
 
 ---
