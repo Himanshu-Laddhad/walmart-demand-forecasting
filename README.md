@@ -4,18 +4,6 @@
 
 ---
 
-## Results at a Glance
-
-| Model | WAPE | RMSE | MAE |
-|---|---|---|---|
-| Seasonal Naive (Legacy Baseline) | 10.84% | 3,623 | 1,747 |
-| LightGBM GBM | 8.27% | 2,769 | 1,333 |
-| **Improvement** | **+2.57 pp (23.7% relative)** | **−23.5%** | **−23.7%** |
-
-Scaled to Walmart's FY2023 revenue of $611B, McKinsey's supply chain benchmark puts the 2.57 pp WAPE improvement at roughly **~$785M in working-capital release** — consistent with Walmart's published ~300 bps backtesting result.
-
----
-
 ## The Problem
 
 Walmart's legacy forecasting system used exponential smoothing: it replicated the prior year's seasonal pattern and adjusted modestly for recent trend. This works in stable environments. Walmart's is not.
@@ -27,6 +15,18 @@ Three structural failure modes drove the rebuild:
 2. **Signal blindness.** Payroll calendars, SNAP distribution dates, regional weather, and promotional timing all drive real demand variation. The legacy system ignored all of them.
 
 3. **Aggregate allocation failure.** The system forecasted national demand then allocated to stores via historical market-share ratios. This broke for regionally-specific items — Chayote squash demand spikes 3× in New Orleans the week before Thanksgiving but is flat everywhere else. The result: shortage in Louisiana and simultaneous overstock nationally from the same forecast run.
+
+---
+
+## Results at a Glance
+
+| Model | WAPE | RMSE | MAE |
+|---|---|---|---|
+| Seasonal Naive (Legacy Baseline) | 10.84% | 3,623 | 1,747 |
+| LightGBM GBM | 8.27% | 2,769 | 1,333 |
+| **Improvement** | **+2.57 pp (23.7% relative)** | **−23.5%** | **−23.7%** |
+
+Scaled to Walmart's FY2023 revenue of $611B, McKinsey's supply chain benchmark puts the 2.57 pp WAPE improvement at roughly **~$785M in working-capital release** — consistent with Walmart's published ~300 bps backtesting result.
 
 ---
 
@@ -132,7 +132,7 @@ jupyter notebook walmart_forecasting_case_study.ipynb
 
 Full analysis with methodology, results, and practitioner lessons:
 
-- **Medium:** *(link)*
+- **Medium:** [Walmart forecasting study](https://h11laddhad.medium.com/walmart-demand-forecasting-c75ed5c1099d)
 - **PDF report:** [`walmart_demand_forecasting_case_study.pdf`](walmart_demand_forecasting_case_study.pdf)
 
 ---
