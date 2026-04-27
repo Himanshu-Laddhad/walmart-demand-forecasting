@@ -1,0 +1,34 @@
+Most retail forecasting systems are secretly just photocopiers.
+
+They copy last year's seasonal pattern, adjust slightly for recent trend, and call it a forecast. Walmart ran one for years.
+
+The problem: their model had no idea Thanksgiving moves. Or that one neighbourhood in New Orleans buys 3× the normal volume of a specific squash the week before the holiday while everywhere else stays flat. Same forecast run. Shortage in Louisiana. Waste everywhere else.
+
+The fix wasn't a fancier algorithm. It was better features.
+
+In 2018, Walmart rebuilt their "Smart Forecasting" platform on Gradient Boosting Machines — with explicit flags for shifting holidays, payroll and SNAP schedule signals, and store-level lag features that let the model learn *corrections on top of* what the old system already knew.
+
+I reproduced the full pipeline on the public Kaggle Walmart dataset (45 stores, 81 departments, 143 weeks). Results on the held-out test period:
+
+→ Seasonal Naive WAPE:  10.84%
+→ LightGBM GBM WAPE:    8.27%
+→ Improvement:          +2.57 pp  (23.7% relative reduction)
+→ RMSE drop:            3,623  →  2,769  (−23.5%)
+
+Scaled to Walmart's $611B revenue, McKinsey's supply chain benchmark puts that at roughly $785M in working-capital release — from one modelling upgrade.
+
+The thing that surprised me most: the top feature by a wide margin was lag_52w — literally last year's same week. The GBM didn't discard it. It used it as a baseline and learned where to correct it. That's the whole story in one feature importance chart.
+
+The full Medium article breaks down:
+→ Why exponential smoothing fails structurally (not just statistically)
+→ Every feature engineering decision and why it matters
+→ The exact segment where GBM wins biggest (and one where it barely beats baseline)
+→ Three notebook design choices that prevent the silent bugs that kill forecasting pipelines in production
+
+Full case study + reproducible Jupyter notebook:
+📖 Medium: [MEDIUM_LINK]
+💻 GitHub: github.com/[yourusername]/walmart-demand-forecasting
+
+If you work in supply chain, retail analytics, or ML — this one is worth 10 minutes.
+
+#SupplyChainAnalytics #MachineLearning #DemandForecasting #DataScience #LightGBM #Walmart #RetailAnalytics #GradientBoosting
